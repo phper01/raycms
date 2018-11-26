@@ -1,0 +1,10 @@
+{% set posts = __SELF__.posts %}
+
+    {% for post in posts %}
+    <li class="col-sm-3 col-xs-6">
+        <a href="{{ post.url }}">
+            <img src="{{ post.featured_images.first.path }}" style="width: 180px;height: 190px;"/>
+            <p>{{ post.title }}</p>
+        </a>
+    </li>
+    {% endfor %}

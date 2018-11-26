@@ -1,0 +1,99 @@
+title = "home"
+url = "/"
+layout = "default"
+is_hidden = 0
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+categoryFilter = "pruduct"
+postsPerPage = 4
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "home"
+postPage = "home"
+
+[blogCategories]
+slug = "{{ :slug }}"
+displayEmpty = 1
+type = 5
+categoryPage = "home"
+
+[blogPosts blogPosts2]
+pageNumber = "{{ :page }}"
+categoryFilter = "pruduct"
+postsPerPage = 8
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "home"
+postPage = "home"
+==
+<div class="main container">
+    <div class="row">
+        <div class="col-sm-3 col-xs-12">
+            <div class="pro-list">
+                <div class="list-head">
+                    <h2>产品分类</h2>
+                    <a href="/pruduct/pruduct">更多+</a>
+                </div>
+                {% component 'blogCategories' %}
+            </div>
+            <div class="pro-list">
+                <div class="list-head">
+                    <h2>新闻分类</h2>
+                    <a href="products.html">更多+</a>
+                </div>
+                {% component 'blogPosts2::news-home' %}
+            </div>
+        </div>
+        <div class="col-sm-9 col-xs-12">
+            <div class="about-list row">
+                <div class="col-md-9 col-sm-12">
+                    <div class="about">
+                        <div class="list-head">
+                            <h2>公司简介</h2>
+                            <a href="/about">更多+</a>
+                        </div>
+                        <div class=" about-con row">
+                            <div class="col-sm-6 col-xs-12">
+                                <img src="{{'assets/images/ab.jpg'|theme }}"/>
+                            </div>
+                            <div class="col-sm-6 col-xs-12">
+                                <h3>昆山蓝海化工有限公司</h3>
+                                <p>
+                                    经销批发的丙二醇、乙二醇、甘油、油酸、胺类、硬脂酸畅销消费者市场，在消费者当中享有较高的地位，公司与多家零售商和代理商建立了长期稳定的合作关系。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-12">
+                    <div class="con-list">
+                        <div class="list-head">
+                            <h2>联系我们</h2>
+                        </div>
+                        <div class="con-det">
+                            <a href="contact.html"><img src="{{'assets/images/listcon.jpg'|theme }}"/></a>
+                            <ul>
+                                <li>公司地址：江苏省昆山市智谷创意产业园</li>
+                                <li>固定电话：<br/>0512-57995109</li>
+                                <li>联系邮箱：Cindy@kindjob.com</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pro-show">
+                <div class="list-head">
+                    <h2>产品展示</h2>
+                    <a href="products.html">更多+</a>
+                </div>
+                <ul class="row">
+                    {% component 'blogPosts' %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<a class="move-top">
+    <p><i class="glyphicon glyphicon-chevron-up"></i></p>
+</a>

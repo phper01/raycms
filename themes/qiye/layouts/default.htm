@@ -1,0 +1,40 @@
+description = "Default layout"
+
+[slideshow]
+slideshow = 2
+numberOfSlide = 5
+==
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <title>{{ this.page.title }}</title>
+    <meta name="description" content="{{ this.page.meta_description }}">
+    <meta name="title" content="{{ this.page.meta_title }}">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{{'assets/css/bootstrap.min.css'|theme }}"/>
+    <link rel="stylesheet" type="text/css" href="{{'assets/css/main.css'|theme }}"/>
+    {% styles %}
+</head>
+
+<body class="bodypg">
+<!-- Header -->
+<header id="layout-header">
+    {% partial 'header' %}
+</header>
+<!-- Content -->
+<section id="layout-content">
+    {% component 'slideshow' %}
+    {% page %}
+</section>
+<!-- Footer -->
+<footer id="layout-footer">
+    {% partial 'footer' %}
+</footer>
+<script src="{{'assets/js/jquery.min.js'|theme }}" type="text/javascript" charset="utf-8"></script>
+<script src="{{'assets/js/bootstrap.min.js'|theme }}" type="text/javascript" charset="utf-8"></script>
+<script src="{{'assets/js/main.js'|theme }}" type="text/javascript" charset="utf-8"></script>
+{% framework extras %}
+{% scripts %}
+</body>
+</html>

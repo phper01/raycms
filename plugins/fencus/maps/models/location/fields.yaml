@@ -1,0 +1,24 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+
+    name:
+        label: fencus.maps::lang.maps.name
+        span: left
+
+    latlng:
+        label: fencus.maps::lang.maps.location
+        type: location-selector
+        span: right
+
+    address:
+        label: fencus.maps::lang.maps.address
+        type: address-locator
+        span: left
+
+    info_window_md:
+        label: fencus.maps::lang.maps.info_window
+        type: markdown
+        mode: split

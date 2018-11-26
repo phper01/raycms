@@ -1,0 +1,40 @@
+{% set posts = __SELF__.posts %}
+
+
+<div class="news-liebiao clearfix news-list-xiug">
+    {% for post in posts %}
+    <div class="row clearfix news-xq">
+        <div class="col-md-2 new-time">
+            <span class="glyphicon glyphicon-time timetubiao"></span>
+            <span class="nqldDay">{{ post.published_at|date('j')}}</span>
+            <div class="shuzitime">
+                <div>{{ post.published_at|date('F')}}</div>
+                <div>{{ post.published_at|date('Y')}}</div>
+            </div>
+        </div>
+        <div class="col-md-10 clearfix">
+            <div class="col-md-3">
+                <img src="{{ post.featured_images.first.path }}" class="new-img">
+            </div>
+            <div class="col-md-9">
+                <h4>
+                    <a href="/info/{{post.slug}}">{{ post.title }}</a>
+                </h4>
+                <p>{{ post.summary }}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+
+{% if posts.lastPage > 1 %}
+<nav aria-label="Page navigation" class=" text-center">
+    <ul class="pagination" id="foo">
+        {{ posts.render|raw }}
+    </ul>
+</nav>
+{% endif %}
+
+
+

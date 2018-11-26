@@ -1,0 +1,37 @@
+title = "product"
+url = "/product/:slug?"
+layout = "default"
+is_hidden = 0
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+categoryFilter = "{{ :slug }}"
+postsPerPage = 4
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "product"
+postPage = "product"
+
+[blogCategories]
+slug = "{{ :slug }}"
+displayEmpty = 1
+type = 5
+categoryPage = "product"
+==
+<div class="abpg container">
+    <div class="">
+        <div class="serli ">
+            <ol class="breadcrumb">
+                <li><i class="glyphicon glyphicon-home"></i>
+                    <a href="index.html">主页</a>
+                </li>
+                <li class="active"><a href="products.html">产品介绍</a></li>
+            </ol>
+            <div class="caseMenu clearfix">
+                
+                {% component 'blogCategories::list' %}
+            </div>
+            {% component 'blogPosts::prlist' %}
+        </div>
+    </div>
+</div>

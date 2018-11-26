@@ -1,0 +1,22 @@
+title = "info"
+url = "/info/:slug"
+layout = "default"
+is_hidden = 0
+
+[blogPost]
+slug = "{{ :slug }}"
+categoryPage = "info"
+
+[nextAndPrev]
+category = "current"
+postPage = "info"
+==
+<div class="abpg container">
+    <div class="row">
+
+        <div class="col-md-12 serli">
+            {% component 'blogPost' %}
+            {% component 'nextAndPrev' %}
+        </div>
+    </div>
+</div>

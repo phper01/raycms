@@ -1,0 +1,9 @@
+{% set posts = __SELF__.posts %}
+
+<div class="clearfix">
+    {% for post in posts %}
+    <dd><a href="/info/{{post.slug}}">{{ post.title }}</a></dd>
+    {% endfor %}
+</div>
+
+

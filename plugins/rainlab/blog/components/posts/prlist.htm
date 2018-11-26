@@ -1,0 +1,25 @@
+{% set posts = __SELF__.posts %}
+
+<div class="pro-det clearfix">
+<ul class="post-list">
+    {% for post in posts %}
+    <li class="col-sm-3 col-xs-6">
+        <a href="/info/{{post.slug}}">
+            <img src="{{ post.featured_images.first.path }}" style="width: 180px;height: 190px;"/>
+            <p>{{ post.title }}</p>
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+</div>
+
+{% if posts.lastPage > 1 %}
+<nav aria-label="Page navigation" class=" text-center">
+    <ul class="pagination" id="foo">
+        {{ posts.render|raw }}
+    </ul>
+</nav>
+{% endif %}
+
+
+

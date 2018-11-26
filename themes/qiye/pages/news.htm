@@ -1,0 +1,36 @@
+title = "news"
+url = "/news/:slug?"
+layout = "default"
+is_hidden = 0
+
+[blogCategories]
+slug = "{{ :slug }}"
+displayEmpty = 1
+type = 2
+categoryPage = "home"
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+categoryFilter = "{{ :slug }}"
+postsPerPage = 4
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "news"
+postPage = "news"
+==
+<div class="abpg container">
+    <div class="">
+        <div class="serli ">
+            <ol class="breadcrumb">
+                <li><i class="glyphicon glyphicon-home"></i>
+                    <a href="index.html">主页</a>
+                </li>
+                <li class="active"><a href="/news/news">新闻中心</a></li>
+            </ol>
+            <div class="caseMenu clearfix">
+                {% component 'blogCategories::list' %}
+            </div>
+            {% component 'blogPosts::list' %}
+        </div>
+    </div>
+</div>

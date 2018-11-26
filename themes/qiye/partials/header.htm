@@ -1,0 +1,63 @@
+[viewBag]
+
+[menu]
+start = "id-6"
+activeNode = 0
+listItemClasses = "item"
+primaryClasses = "nav nav-pills"
+secondaryClasses = "dropdown-menu"
+numberOfLevels = 1
+==
+<div class="top-intr">
+    <div class="container">
+        <p class="pull-left">
+            蓝海化工有限公司
+        </p>
+        <p class="pull-right">
+            <a><i class="glyphicon glyphicon-earphone"></i>联系电话：0512-57995109 </a>
+        </p>
+    </div>
+</div>
+<nav class="navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>-->
+            <a href="index.html">
+                <h1>蓝海化工</h1>
+                <p>LAN HAI CO.,LTD.</p>
+            </a>
+        </div>
+
+        <div class="nav-list">
+        {% component 'menu' %}
+        </div>
+
+    </div>
+</nav>
+<div class="fl hidden-lg hidden-md hidden-sm">
+    <ul>
+        <li>
+            <a href="index.html">
+                <p><i class="glyphicon glyphicon-home"></i>
+                    网站首页</p>
+            </a>
+        </li>
+        <li>
+            <a href="tel:18112651385">
+                <p><i class="glyphicon glyphicon-earphone"></i>
+                    拨号a联系</p>
+            </a>
+        </li>
+        <li>
+            <a href="contact.html#message">
+                <p><i class="glyphicon glyphicon-comment"></i>
+                    在线留言</p>
+            </a>
+        </li>
+    </ul>
+</div>

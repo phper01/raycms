@@ -1,0 +1,37 @@
+{% set post = __SELF__.post %}
+
+{% set prevPost = blogPost.previousPost %}
+{% set nextPost = blogPost.nextPost %}
+
+<ol class="breadcrumb">
+    <li><i class="glyphicon glyphicon-home"></i>
+        <a href="index.html">主页</a>
+    </li>
+    <li class="active">{% if post.categories.count %}
+        {% for category in post.categories %}
+        <a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
+        {% endfor %}
+        {% endif %}</li>
+</ol>
+<div class="news-deatil">
+    <h2>{{ post.title }}</h2>
+    <p class="news-time">
+        发布时间：{{ post.published_at|date('Y-m-d') }}
+    </p>
+    {% if post.featured_images.count %}
+    <div class="featured-images text-center">
+        {% for image in post.featured_images %}
+        <div class="center">
+            <img
+                    data-src="{{ image.filename }}"
+                    src="{{ image.path }}"
+                    alt="{{ image.description }}"
+                    style="max-width: 90%" />
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    <div class="news-con">
+        {{ post.content_html|raw }}
+    </div>
+</div>

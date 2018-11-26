@@ -1,0 +1,16 @@
+{% for category in categories %}
+
+    {% if category.children != "[]"  %}
+        <dt>{{ category.name }}</dt>
+        <dl>
+            {% partial __SELF__ ~ "::items"
+            categories=category.children
+            currentCategorySlug=currentCategorySlug
+            %}
+        </dl>
+    {% else %}
+        <dd><a href="{{ category.url }}">{{ category.name }}</a></dd>
+     {% endif %}
+
+
+{% endfor %}
